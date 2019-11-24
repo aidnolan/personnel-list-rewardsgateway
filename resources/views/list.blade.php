@@ -6,12 +6,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Laravel</title>
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
     </head>
     <body>
         @foreach ($data as $profile)
-            <ul class="">
+            <ul class="bg-blue-100 list-none pl-4 m-4">
                 <li>
                     <img src="{{$profile->avatar}}" alt="No image available">
                 </li>
@@ -25,7 +26,7 @@
                     {{$profile->company}}
                 </li>
                 <li>
-                    {{$profile->bio}}
+                    {{strip_tags($profile->bio)}}
                 </li>
             </ul>
         @endforeach
