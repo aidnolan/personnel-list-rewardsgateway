@@ -4,11 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
-use App\Exceptions;
 
 class PersonnelListController extends Controller
 {
-    public function index(Exception $exception)
+    public function index()
     {
         $client = new Client();
         $response = $client->request('GET', 'http://hiring.rewardgateway.net/list', [
